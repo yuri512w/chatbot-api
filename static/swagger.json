@@ -1,0 +1,42 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Chatbot API",
+        "description": "API para comunicação com um chatbot baseado em IA",
+        "version": "1.0.0"
+    },
+    "host": "127.0.0.1:5000",
+    "schemes": ["http"],
+    "paths": {
+        "/chat": {
+            "post": {
+                "summary": "Enviar mensagem ao chatbot",
+                "description": "O chatbot responde à mensagem enviada pelo usuário.",
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "message": {"type": "string"}
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Resposta do chatbot",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "response": {"type": "string"}
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
